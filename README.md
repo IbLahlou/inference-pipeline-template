@@ -28,7 +28,7 @@ pip install cookiecutter
 To generate a new BentoML project using this template, run the following command:
 
 ```bash
-cookiecutter path_to_this_repository
+cookiecutter https://github.com/IbLahlou/inference-pipeline-template
 ```
 
 You will be prompted to enter details such as the project name, model framework, and other configurations. Once provided, the template will create a new directory with all the necessary files for your BentoML service.
