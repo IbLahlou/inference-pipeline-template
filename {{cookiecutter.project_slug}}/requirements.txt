@@ -1,0 +1,2 @@
+bentoml
+{{cookiecutter.model_framework}}

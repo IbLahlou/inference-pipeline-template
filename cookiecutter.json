@@ -1,0 +1,9 @@
+{
+    "project_slug": "bentoml_app",
+    "model_framework": ["pytorch", "tensorflow"],
+    "model_name": "my_model",
+    "model_service_name": "MyModelService",
+    "include_runner": ["yes", "no"],
+    "batchable": ["yes", "no"],
+    "batch_dim": "Any integer representing batch dimension (default is -1 for unspecified)"
+}

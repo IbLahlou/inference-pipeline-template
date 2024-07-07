@@ -1,0 +1,10 @@
+service: "service:{{cookiecutter.model_service_name}}"
+include:
+  - "*.py"
+exclude:
+  - tests/
+description: "This BentoML service packages a {{cookiecutter.model_framework}} model with optional batch processing."
+python:
+  packages:
+    - bentoml
+    - {{cookiecutter.model_framework}}
