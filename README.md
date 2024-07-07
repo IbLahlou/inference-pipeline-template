@@ -60,5 +60,3 @@ Contributions to this template are welcome. Please feel free to fork the reposit
 
 Specify the license under which the template is released.
 
-test
-test2
