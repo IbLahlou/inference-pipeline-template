@@ -52,11 +52,3 @@ The generated project will have the following structure:
 └── README.md
 ```
 
-## Contributing
-
-Contributions to this template are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
-
-## License
-
-Specify the license under which the template is released.
-
