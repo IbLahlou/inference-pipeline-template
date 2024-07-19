@@ -13,5 +13,5 @@ pip install -r service/requirements.txt
 Run the BentoML service:
 
 ```bash
-bentoml serve service:{{cookiecutter.model_service_name}}
+bentoml serve {{cookiecutter.model_service_name}}:
 ```
