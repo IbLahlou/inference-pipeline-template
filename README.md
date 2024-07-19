@@ -39,16 +39,17 @@ The generated project will have the following structure:
 
 ```
 {{cookiecutter.project_slug}}/
-├── bentofile.yml
-├── {{cookiecutter.model_framework}}_model/
-│   ├── model_loading.py
-│   └── requirements.txt
-├── service/
-│   ├── service.py
-│   └── requirements.txt
 ├── tests/
 │   ├── __init__.py
-│   └── test_service.py
+│   └── models_test.py
+├── workflows/
+│   └── ci.yml
+├── utils.py
+├── models.py
+├── {{cookiecutter.model_service_name}}.py
+├── bentofile.yml
+├── requirements.txt
+├── setup.py
 └── README.md
 ```
 
