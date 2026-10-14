@@ -2,5 +2,8 @@
     "project_slug": "bentoml_app",
     "model_framework": ["pytorch", "tensorflow"],
     "model_name": "model",
-    "model_service_name": "model_svc"
+    "model_service_name": "model_svc",
+    "api_port": "3000",
+    "prometheus_port": "9090",
+    "grafana_port": "3001"
 }

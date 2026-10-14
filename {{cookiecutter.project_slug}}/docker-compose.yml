@@ -1,0 +1,45 @@
+services:
+  api:
+    build: .
+    ports:
+      - "{{ cookiecutter.api_port }}:{{ cookiecutter.api_port }}"
+    env_file:
+      - .env
+    volumes:
+      - model-store:/home/appuser/bentoml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:{{ cookiecutter.api_port }}/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "{{ cookiecutter.prometheus_port }}:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    depends_on:
+      - api
+    profiles:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "{{ cookiecutter.grafana_port }}:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana-dashboard.json:/var/lib/grafana/dashboards/inference.json:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    profiles:
+      - monitoring
+
+volumes:
+  model-store:
+  prometheus-data:
+  grafana-data:
